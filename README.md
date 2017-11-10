@@ -6,6 +6,6 @@
 4、resource/...：资源(包括图片、文件、音频、视频等等)
 5、storage：缓存
 6、stores：状态管理
-7、styles：公共样式
+7、styles：公共样式、颜色色值
 8、utils：工具
 9、pages：项目界面
