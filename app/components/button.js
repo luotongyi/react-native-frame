@@ -37,12 +37,12 @@ class Button extends Component {
     render() {
         const { backgroundImage } = this.props
         return (
-            backgroundImage ?
-                <TouchableHighlight disabled={false} activeOpacity={0.6}
+            !backgroundImage ?
+                <TouchableHighlight
                     style={{ width: 200, height: 50, backgroundColor: '#0000ff' }}>
                     <Text>{this.props.title}</Text>
                 </TouchableHighlight> :
-                <TouchableOpacity disabled={false} activeOpacity={0.6}
+                <TouchableOpacity activeOpacity={0.6}
                     style={{ width: 200, height: 50, backgroundColor: '#00aaff' }}>
                     <Text>{this.props.title}</Text>
                 </TouchableOpacity>
