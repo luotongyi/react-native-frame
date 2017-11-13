@@ -29,11 +29,11 @@ class GridItem extends Component {
         style: { height: 80 },//默认高度80，不能设置宽度，宽度是根据columns来设置的
 
         defaultImage: null,
-        image: require('../resources/images/menu_icon.png'),
+        image: null,
     };
     render() {
-        const { columns, image, defaultImage, dot, badge, onClick } = this.props;
-        //dot和bade不能同时存在
+        const { columns, image, defaultImage, dot, badge, onClick, title } = this.props;
+        //dot和badge不能同时存在
         let badgeWidth = 0;
         let badgeNumber = '';
 
@@ -60,6 +60,7 @@ class GridItem extends Component {
                 </View>
         }
 
+        let showText = title == '' ? false : true
         return (
             <TouchableOpacity
                 style={[styles.container, this.props.style, { width: SCREEN_WIDTH / columns }]}
@@ -71,9 +72,11 @@ class GridItem extends Component {
                     resizeMode='contain' >
                     {cornerView}
                 </ImageBackground>
-                <Text ellipsizeMode='middle'
-                    numberOfLines={1}
-                    style={styles.titleStyle}>{this.props.title}</Text>
+                {!showText ?
+                    null :
+                    <Text ellipsizeMode='middle'
+                        numberOfLines={1}
+                        style={[styles.titleStyle]}>{title}</Text>}
             </TouchableOpacity>
         );
     }
@@ -83,13 +86,12 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'column',
         alignItems: 'center',
+        justifyContent: 'center',
         backgroundColor: 'transparent',
     },
     imageStyle: {
         height: 40,
         width: 40,
-        marginTop: 10,
-        marginBottom: 5,
         alignItems: 'center',
     },
     titleStyle: {

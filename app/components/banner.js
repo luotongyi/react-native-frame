@@ -24,6 +24,9 @@ class Banner extends Component {
         onItemClick: (info, i) => { },
         defaultImage: null,
 
+        imageStyle: { width: SCREEN_WIDTH, height: SCREEN_WIDTH / 3 },
+        swipeStyle: { width: SCREEN_WIDTH, height: SCREEN_WIDTH / 3 + 5 },
+
         autoplayTime: 2,
         autoplay: true,
 
@@ -32,7 +35,7 @@ class Banner extends Component {
     };
 
     render() {
-        const { bannerArray, onItemClick, defaultImage } = this.props
+        const { bannerArray, onItemClick, defaultImage, imageStyle, swipeStyle } = this.props
         let bannerImages = bannerArray.map(
             (info, i) => {
                 return (
@@ -42,14 +45,14 @@ class Banner extends Component {
                         <Image source={{ uri: info.imageUrl }}
                             resizeMode='contain'
                             defaultSource={defaultImage}
-                            style={styles.imageItem} />
+                            style={[imageStyle, styles.imageItem]} />
                     </TouchableOpacity>
                 )
             }
         )
         const { autoplay, autoplayTime, dotColor, activeDotColor } = this.props
         return (
-            <View style={styles.container}>
+            <View style={[swipeStyle, styles.container]}>
                 <Swiper autoplay={autoplay}
                     autoplayTimeout={autoplayTime}
                     dotStyle={styles.dot}
@@ -65,13 +68,9 @@ class Banner extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        width: SCREEN_WIDTH,
-        height: SCREEN_WIDTH / 3 + 5,
         backgroundColor: '#fff',
     },
     imageItem: {
-        width: SCREEN_WIDTH,
-        height: SCREEN_WIDTH / 3,
         backgroundColor: 'transparent',
     },
     dot: {

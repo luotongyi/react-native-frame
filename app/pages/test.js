@@ -14,8 +14,9 @@ import {
 
 
 class TestPage extends Component {
-    state = {}
     render() {
+        let banners = [{ imageUrl: 'https://wap.cq.10086.cn/mall/ecrm/img/ecom/5076222890324376.jpg' }, { imageUrl: 'https://wap.cq.10086.cn/mall/ecrm/img/ecom/5076222890324376.jpg' }, { imageUrl: 'http://wap.cq.10086.cn/mall/ecrm/img/ecom/5076222890324376.jpg' },{imageUrl: 'http://wap.cq.10086.cn/mall/ecrm/img/ecom/5076222890324376.jpg'}]
+
         return (
             <ScrollView style={{ marginTop: 20 }}>
                 <Text>aaaa</Text>
@@ -23,10 +24,10 @@ class TestPage extends Component {
                 <PageControl numberOfPages={6} currentPage={3} />
                 <Text>{api.VERSION_CHECK_URL2}</Text>
                 <TabBarItem dot normalImage={require('../resources/images/home.png')} />
-                <Banner />
+                <Banner bannerArray={banners} />
                 <Button />
                 {/* <QRScanner /> */}
-                <GridItem />
+                <GridItem image={require('../resources/images/menu_icon.png')} />
 
             </ScrollView>
         );
