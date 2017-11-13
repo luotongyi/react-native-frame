@@ -49,7 +49,7 @@ class TabBarItem extends Component {
             cornerView = <View style={styles.dotStyle} />;
         } else {
             cornerView = badgeWidth == 0 ? null :
-                <View style={[styles.BadgeView, { width: badgeWidth }]}>
+                <View style={[styles.badgeView, { width: badgeWidth }]}>
                     <Text style={styles.badgeText}>{badgeNumber}</Text>
                 </View>
         }
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     itemImage: {
         alignItems: 'center',
     },
-    badageView: {
+    badgeView: {
         marginRight: -30,
         alignItems: 'center',
         justifyContent: 'center',

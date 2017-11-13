@@ -20,7 +20,7 @@ const SCREEN_WIDTH = Dimensions.get('window').width
  */
 class Banner extends Component {
     static defaultProps = {
-        bannerArray: [{ imageUrl: 'http://wap.cq.10086.cn/mall/ecrm/img/ecom/5051848590046038.jpg' }, { imageUrl: 'http://wap.cq.10086.cn/mall/ecrm/img/ecom/5051848590046038.jpg' }, { imageUrl: 'http://wap.cq.10086.cn/mall/ecrm/img/ecom/5051848590046038.jpg' }, { imageUrl: 'http://wap.cq.10086.cn/mall/ecrm/img/ecom/5051848590046038.jpg' },],//图片地址必须是imageUrl作为key
+        bannerArray: [],//图片地址必须是imageUrl作为key
         onItemClick: (info, i) => { },
         defaultImage: null,
 

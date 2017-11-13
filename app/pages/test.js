@@ -9,6 +9,7 @@ import {
     Banner,
     Button,
     QRScanner,
+    GridItem,
 } from '../components'
 
 
@@ -25,6 +26,7 @@ class TestPage extends Component {
                 <Banner />
                 <Button />
                 {/* <QRScanner /> */}
+                <GridItem />
 
             </ScrollView>
         );

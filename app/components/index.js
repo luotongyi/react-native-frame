@@ -5,6 +5,7 @@ import Banner from './banner'
 import Button from './button'
 import QRScanner from './qrScanner'
 import NativeWebIOS from './nativeWebIOS'
+import GridItem from './gridItem'
 
 /**
  * 所有组件的统一入口
@@ -16,5 +17,5 @@ export {
     Button,
     QRScanner,
     NativeWebIOS,
-
+    GridItem,
 }
