@@ -1,4 +1,7 @@
 
+/**
+ * 常用的颜色统一定义处理
+ */
 export default {
     transparent: 'transparent',
     black: '#000',
