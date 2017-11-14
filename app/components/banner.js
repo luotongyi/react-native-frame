@@ -20,7 +20,7 @@ const SCREEN_WIDTH = Dimensions.get('window').width
  */
 class Banner extends Component {
     static defaultProps = {
-        bannerArray: [],//图片地址必须是imageUrl作为key
+        bannerArray: [],//显示图片字段key是imageUrl的网络图片
         onItemClick: (info, i) => { },
         defaultImage: null,
 

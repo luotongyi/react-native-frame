@@ -10,12 +10,15 @@ import {
     Button,
     QRScanner,
     GridItem,
+    NativeWebViewIOS,
+    GridView,
+    GridViewType,
 } from '../components'
 
 
 class TestPage extends Component {
     render() {
-        let banners = [{ imageUrl: 'https://wap.cq.10086.cn/mall/ecrm/img/ecom/5076222890324376.jpg' }, { imageUrl: 'https://wap.cq.10086.cn/mall/ecrm/img/ecom/5076222890324376.jpg' }, { imageUrl: 'http://wap.cq.10086.cn/mall/ecrm/img/ecom/5076222890324376.jpg' },{imageUrl: 'http://wap.cq.10086.cn/mall/ecrm/img/ecom/5076222890324376.jpg'}]
+        let banners = [{ imageUrl: 'https://wap.cq.10086.cn/mall/ecrm/img/ecom/5076222890324376.jpg' }, { imageUrl: 'https://wap.cq.10086.cn/mall/ecrm/img/ecom/5076222890324376.jpg' }, { imageUrl: 'http://wap.cq.10086.cn/mall/ecrm/img/ecom/5076222890324376.jpg' }, { imageUrl: 'http://wap.cq.10086.cn/mall/ecrm/img/ecom/5076222890324376.jpg' }, { imageUrl: 'https://wap.cq.10086.cn/mall/ecrm/img/ecom/5076222890324376.jpg' }, { imageUrl: 'https://wap.cq.10086.cn/mall/ecrm/img/ecom/5076222890324376.jpg' }, { imageUrl: 'http://wap.cq.10086.cn/mall/ecrm/img/ecom/5076222890324376.jpg' }, { imageUrl: 'http://wap.cq.10086.cn/mall/ecrm/img/ecom/5076222890324376.jpg' }, { imageUrl: 'https://wap.cq.10086.cn/mall/ecrm/img/ecom/5076222890324376.jpg' }, { imageUrl: 'https://wap.cq.10086.cn/mall/ecrm/img/ecom/5076222890324376.jpg' }]
 
         return (
             <ScrollView style={{ marginTop: 20 }}>
@@ -28,7 +31,9 @@ class TestPage extends Component {
                 <Button />
                 {/* <QRScanner /> */}
                 <GridItem image={require('../resources/images/menu_icon.png')} />
-
+                <NativeWebViewIOS />
+                <GridView gridArray={banners} type={GridViewType.GridViewType_Horizontal}
+                    onItemClick={() => { alert('aa') }} />
             </ScrollView>
         );
     }

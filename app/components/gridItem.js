@@ -30,9 +30,10 @@ class GridItem extends Component {
 
         defaultImage: null,
         image: null,
+        imageSize: { height: 40, width: 40 }//默认宽高
     };
     render() {
-        const { columns, image, defaultImage, dot, badge, onClick, title } = this.props;
+        const { columns, image, defaultImage, imageSize, dot, badge, onClick, title } = this.props;
         //dot和badge不能同时存在
         let badgeWidth = 0;
         let badgeNumber = '';
@@ -68,7 +69,7 @@ class GridItem extends Component {
                 activeOpacity={0.8}>
                 <ImageBackground source={image}
                     defaultSource={defaultImage}
-                    style={styles.imageStyle}
+                    style={[styles.imageStyle, imageSize]}
                     resizeMode='contain' >
                     {cornerView}
                 </ImageBackground>
@@ -90,8 +91,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent',
     },
     imageStyle: {
-        height: 40,
-        width: 40,
         alignItems: 'center',
     },
     titleStyle: {
