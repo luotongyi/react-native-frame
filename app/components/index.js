@@ -6,6 +6,8 @@ import QRScanner from './qrScanner'
 import GridItem from './gridItem'
 import GridView, { GridViewType } from './gridView'
 import NativeWebViewIOS from './nativeWebViewIOS'
+import NavigationItem from './navigationItem'
+import NavigationBar from './navigationBar'
 
 /**
  * 所有组件的统一入口
@@ -19,4 +21,6 @@ export {
     GridView,
     GridViewType,
     NativeWebViewIOS,
+    NavigationItem,
+    NavigationBar,
 }

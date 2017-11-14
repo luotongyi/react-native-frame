@@ -7,12 +7,13 @@ import {
     PageControl,
     TabBarItem,
     Banner,
-    Button,
     QRScanner,
     GridItem,
     NativeWebViewIOS,
     GridView,
     GridViewType,
+    NavigationItem,
+    NavigationBar,
 } from '../components'
 
 
@@ -25,15 +26,17 @@ class TestPage extends Component {
                 <Text>aaaa</Text>
                 <Text>{crypto.MD5('aaa') + '\n' + CryptoType.CryptoType_AES}</Text>
                 <PageControl numberOfPages={6} currentPage={3} />
+                <NavigationBar leftItems={[<NavigationItem key={1} />, <NavigationItem key={2} />]}
+                    rightItems={[<NavigationItem key={1} />]} />
                 <Text>{api.VERSION_CHECK_URL2}</Text>
                 <TabBarItem dot normalImage={require('../resources/images/home.png')} />
                 <Banner bannerArray={banners} />
-                <Button />
                 {/* <QRScanner /> */}
                 <GridItem image={require('../resources/images/menu_icon.png')} />
                 <NativeWebViewIOS />
                 <GridView gridArray={banners} type={GridViewType.GridViewType_Horizontal}
                     onItemClick={() => { alert('aa') }} />
+                <NavigationItem />
             </ScrollView>
         );
     }
