@@ -8,7 +8,7 @@ import {
 
 class NavigationItem extends Component {
     static defaultProps = {
-        title: '标题',
+        title: '',
         titleStyle: { color: '#fff' },
 
         image: require('../resources/images/menu_icon.png'),
@@ -22,11 +22,9 @@ class NavigationItem extends Component {
         let IconImage = !image ? null :
             <Image style={styles.imageStyle} source={image} />
 
-        if (title) {
-            var TextView = title == '' ? null :
-                <Text style={[styles.textStyle, { fontSize: IconImage ? 11 : 15 }, titleStyle]}>
-                    {this.props.title}</Text >
-        }
+        let TextView = title == '' ? null :
+            <Text style={[styles.textStyle, { fontSize: IconImage ? 11 : 15 }, titleStyle]}>
+                {this.props.title}</Text >
 
         return (
             <TouchableOpacity activeOpacity={.8}

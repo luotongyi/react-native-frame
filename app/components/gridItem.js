@@ -23,7 +23,7 @@ class GridItem extends Component {
         dot: false,
         badge: 0,
 
-        title: 'text',
+        title: '',
         titleStyle: {},
         columns: 4,
         style: { height: 80 },//默认高度80，不能设置宽度，宽度是根据columns来设置的
@@ -51,15 +51,11 @@ class GridItem extends Component {
             badgeWidth = 0
             badgeNumber = ''
         }
-        let cornerView;
-        if (dot) {
-            cornerView = <View style={styles.dotStyle} />;
-        } else {
-            cornerView = badgeWidth == 0 ? null :
+        let cornerView = dot ? <View style={styles.dotStyle} /> :
+            (badgeWidth == 0 ? null :
                 <View style={[styles.badgeView, { width: badgeWidth }]}>
                     <Text style={styles.badgeText}>{badgeNumber}</Text>
-                </View>
-        }
+                </View>)
 
         let showText = title == '' ? false : true
         return (

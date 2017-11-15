@@ -18,7 +18,7 @@ const SCREEN_WIDTH = Dimensions.get('window').width
  */
 class NavigationBar extends Component {
     static defaultProps = {
-        title: '标题',
+        title: '',
         titleStyle: {
             color: '#fff',
             fontSize: 17,

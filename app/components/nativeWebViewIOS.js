@@ -54,25 +54,25 @@ class NativeWebViewIOS extends Component {
         }
     }
     static navigationOptions = ({ navigation }) => ({
-        // headerTitle: navigation.state.params.title ?
-        //     navigation.state.params.title : '加载中...'
+        headerTitle: navigation.state.params.title ?
+            navigation.state.params.title : '加载中...'
     })
     render() {
-        // const params = this.props.navigation.state.params
+        const params = this.props.navigation.state.params
         return (
             <View>
                 <NativeWebIOS style={styles.container}
                     onFinishLoad={this._finishLoad}
-                    url={''/*params.url*/}
+                    url={params.url}
                     onClick={this._onClickAction} />
             </View>
         );
     }
     _onClickAction(e) {
-        alert('aaaa' + e.nativeEvent);
+        alert('点击了按钮内容：' + e.nativeEvent);
     }
     _finishLoad(e) {
-        // this.props.navigation.setParams({ title: e.nativeEvent.title })
+        this.props.navigation.setParams({ title: e.nativeEvent.title })
     }
 }
 

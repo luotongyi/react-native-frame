@@ -13,7 +13,7 @@ import { Provider } from 'mobx-react';
 
 import stores from './app/stores';
 import './app/storage'
-import TestPage from './app/pages/test'
+import NavigationRouter from './app/base/navigationRouter'
 
 export default class App extends Component<{}> {
   componentDidMount() {
@@ -87,7 +87,7 @@ export default class App extends Component<{}> {
   render() {
     return (
       <Provider {...stores}>
-        <TestPage />
+        <NavigationRouter />
       </Provider>
     );
   }

@@ -47,7 +47,7 @@ export default class Crypto {
             });
             return encrypted.toString();
         }
-        else {//重庆App的DES加密
+        else {//App的DES加密
             let encrypted = CryptoJS.DES.encrypt(text, keyHex, {
                 mode: CryptoJS.mode.ECB,
                 padding: CryptoJS.pad.Pkcs7
@@ -74,7 +74,7 @@ export default class Crypto {
             });
             return decrypted.toString(CryptoJS.enc.Utf8);
         }
-        else {//重庆App的DES解密
+        else {//App的DES解密
             let decrypted = CryptoJS.DES.decrypt({
                 ciphertext: CryptoJS.enc.Base64.parse(text)
             }, keyHex, {

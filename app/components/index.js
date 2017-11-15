@@ -8,6 +8,7 @@ import GridView, { GridViewType } from './gridView'
 import NativeWebViewIOS from './nativeWebViewIOS'
 import NavigationItem from './navigationItem'
 import NavigationBar from './navigationBar'
+import TableCell from './tableCell'
 
 /**
  * 所有组件的统一入口
@@ -23,4 +24,5 @@ export {
     NativeWebViewIOS,
     NavigationItem,
     NavigationBar,
+    TableCell,
 }

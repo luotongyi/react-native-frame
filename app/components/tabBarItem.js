@@ -44,15 +44,12 @@ class TabBarItem extends Component {
             badgeWidth = 0
             badgeNumber = ''
         }
-        let cornerView;
-        if (dot) {
-            cornerView = <View style={styles.dotStyle} />;
-        } else {
-            cornerView = badgeWidth == 0 ? null :
+        let cornerView = dot ? <View style={styles.dotStyle} /> :
+            (badgeWidth == 0 ? null :
                 <View style={[styles.badgeView, { width: badgeWidth }]}>
                     <Text style={styles.badgeText}>{badgeNumber}</Text>
-                </View>
-        }
+                </View>)
+
         return (
             <ImageBackground
                 source={focused ? selectImage : normalImage}

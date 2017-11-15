@@ -6,7 +6,8 @@ import {
     Text,
     Image,
     StyleSheet,
-    Dimensions
+    Dimensions,
+    Vibration
 } from 'react-native';
 import Camera from 'react-native-camera';
 
@@ -22,7 +23,7 @@ const SCREEN_HEIGHT = Dimensions.get('window').height
  */
 class QRScanner extends Component {
     static defaultProps = {
-        onScanResult: (e) => { /*alert('aaa' + e.data)*/ },
+        onScanResult: (result) => { alert('扫码内容：' + result) },
         reactWidth: 260,
         hintText: '将二维码/条码放入框内，即可自动扫描',
 
@@ -37,8 +38,22 @@ class QRScanner extends Component {
         this._renderScanLine = this._renderScanLine.bind(this)
         this._scannerLineDown = this._scannerLineDown.bind(this)
         this._scannerLineUp = this._scannerLineUp.bind(this)
+        this._scanResult = this._scanResult.bind(this)
         this.state = {
             animatedValue: new Animated.Value(5),
+            scanResult: ''
+        }
+    }
+    static navigationOptions = ({ navigation }) => ({
+        headerTitle: '二维码扫描'
+    })
+    _scanResult(e) {
+        if (e.data !== this.state.scanResult) {
+            Vibration.vibrate(1000, false);
+            this.setState({
+                scanResult: e.data,
+            })
+            this.props.onScanResult(e.data);
         }
     }
     _renderScanLine() {
@@ -94,7 +109,7 @@ class QRScanner extends Component {
         };
         return (
             <View style={styles.container}>
-                <Camera style={styles.container} onBarCodeRead={onScanResult}>
+                <Camera style={styles.container} onBarCodeRead={this._scanResult}>
                     {/* 顶部 */}
                     <View style={[styles.scanMask, { width: SCREEN_WIDTH, height: topHeight }]} />
                     {/* 中间 */}
